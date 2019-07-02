@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html>
+<head>
+  <title>Teams in League</title>
+</head>
+<body>
+<h4>Teams in the League</h4>
+<div class="teams" th:each="team,status : ${teams}">
+  <div class="team" th:object="${team}">
+    <ul>
+      <li ><a th:href="@{'/teams/' + ${status.index}}" th:text="${team.getTeamName()}"></a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+</body>
+</html>

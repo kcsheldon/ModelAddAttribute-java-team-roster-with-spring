@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html>
+<head>
+  <title>Teams in League</title>
+</head>
+<body>
+<h4>Team Page</h4>
+
+<h5 th:text="${team.getTeamName()}"></h5>
+
+<div class="players" th:each="player : ${players}">
+  <ul >
+    <li th:text="${player.getName()} +' Position: '+ ${player.getPosition()}"></li>
+  </ul>
+</div>
+</body>
+</html>
